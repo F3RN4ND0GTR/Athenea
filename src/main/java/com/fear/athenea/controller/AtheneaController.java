@@ -3,23 +3,19 @@
  */
 package com.fear.athenea.controller;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fear.athenea.authentication.dto.AuthRequest;
-import com.fear.athenea.authentication.dto.RegisterDto;
+import com.fear.athenea.authentication.dto.UserDto;
 import com.fear.athenea.authentication.service.AuthenticationService;
-import com.fear.athenea.security.JWUtil;
 
 import jakarta.validation.Valid;
-
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Usuario
@@ -50,7 +46,7 @@ public class AtheneaController {
 	}
 
 	@PostMapping("/register")
-	public ResponseEntity<?> register(@RequestBody RegisterDto registro) {
+	public ResponseEntity<?> register(@RequestBody UserDto registro) {
 
 		return ResponseEntity.ok("");
 	}

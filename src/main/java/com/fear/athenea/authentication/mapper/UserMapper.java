@@ -2,7 +2,7 @@ package com.fear.athenea.authentication.mapper;
 
 import java.util.Optional;
 
-import com.fear.athenea.authentication.dto.RegisterDto;
+import com.fear.athenea.authentication.dto.UserDto;
 import com.fear.athenea.authentication.repository.MunicipioCensalRepository;
 import com.fear.athenea.authentication.repository.MunicipioRepository;
 import com.fear.athenea.authentication.repository.RolRepository;
@@ -26,7 +26,7 @@ public class UserMapper {
 		this.municipioCensalRepository = municipioCensalRepository;
 	}
 	
-	public User dtoToEntity(RegisterDto dto) {
+	public User dtoToEntity(UserDto dto) {
 		User user = null;
 		
 		if(dto != null) {
@@ -49,6 +49,20 @@ public class UserMapper {
 		}
 		
 		return user;
+	}
+	
+	public UserDto EntityToDto(User user) {
+		
+		UserDto userDto = new UserDto();
+		userDto.setUsuario(user.getUsuario());
+		userDto.setPassword(user.getPassword());
+		userDto.setMunicipio(user.getMunicipioCensal().getMunicipio().getId().toString());
+		userDto.setDistrito(user.getMunicipioCensal().getDistrito().toString());
+		userDto.setSeccion(user.getMunicipioCensal().getSeccion().toString());
+		userDto.setMesa(user.getMunicipioCensal().getMesa());
+		userDto.setRole(user.getRol().getId().toString());
+		
+		return userDto;
 		
 	}
 
