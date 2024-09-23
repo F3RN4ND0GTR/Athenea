@@ -33,6 +33,7 @@
 		<hibernate.version>6.6.0.Final</hibernate.version>
 		<maven.shade.plugin.version>3.6.0</maven.shade.plugin.version>
 		<spring.security.starter.version>3.3.3</spring.security.starter.version>
+		<modelMapper.version>3.2.1</modelMapper.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -42,7 +43,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-			<version>${spring.security.starter.version}</version><!--$NO-MVN-MAN-VER$-->
+			<version>${spring.security.starter.version}</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -80,6 +81,11 @@
 			<groupId>org.hibernate.orm</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version><!--$NO-MVN-MAN-VER$ -->
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${modelMapper.version}</version>
 		</dependency>
 	</dependencies>
 

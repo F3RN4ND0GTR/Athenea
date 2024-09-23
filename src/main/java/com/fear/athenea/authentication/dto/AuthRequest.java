@@ -1,12 +1,8 @@
 /**
  * 
  */
-package com.fear.athenea.dto;
+package com.fear.athenea.authentication.dto;
 
-/**
- * @author Usuario
- *
- */
 import lombok.Getter;
 import lombok.Setter;
 
